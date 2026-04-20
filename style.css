@@ -1,0 +1,154 @@
+@keyframes buttonPress {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.95);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes displayFlash {
+    0%, 100% {
+        background-color: hsl(0, 0%, 20%);
+    }
+    50% {
+        background-color: hsl(0, 0%, 25%);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0.5;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes errorShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+}
+
+#keys {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 25px;
+}
+
+#calculator {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: hsl(0, 0%, 15%);
+    border-radius: 45px;
+    max-width: 500px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: box-shadow 0.3s ease;
+}
+
+#calculator:hover {
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.7);
+}
+
+#display {
+    width: 100%;
+    padding: 20px;
+    font-size: 5rem;
+    text-align: left;
+    border: none;
+    background-color: hsl(0, 0%, 20%);
+    color: white;
+    transition: all 0.2s ease;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+#display.updating {
+    animation: displayFlash 0.3s ease;
+}
+
+#display.error {
+    animation: errorShake 0.5s ease;
+    color: hsl(0, 100%, 70%);
+}
+
+#creator {
+    border-radius: 15px;
+    background-color: hsl(0, 0%, 15%);
+    color: hsl(0, 0%, 40%);
+    padding: 10px;
+    font-size: 1rem;
+    align-self: center;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+#creator:hover {
+    color: hsl(0, 0%, 60%);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: hsl(0, 0%, 10%);
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+p {
+    margin: 15px;
+}
+
+button {
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    border: none;
+    background-color: hsl(0, 0%, 30%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.1s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    user-select: none;
+}
+
+button:hover {
+    background-color: hsl(0, 0%, 40%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+button:active {
+    background-color: hsl(0, 0%, 50%);
+    animation: buttonPress 0.2s ease;
+    transform: translateY(0);
+}
+
+button.pressed {
+    animation: buttonPress 0.2s ease;
+}
+
+.operator-btn {
+    background-color: hsl(25, 90%, 50%);
+}
+
+.operator-btn:hover {
+    background-color: hsl(25, 90%, 65%);
+    transform: translateY(-2px);
+}
+
+.operator-btn:active {
+    background-color: hsl(25, 90%, 85%);
+    animation: buttonPress 0.2s ease;
+}
