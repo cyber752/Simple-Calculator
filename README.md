@@ -1,4 +1,4 @@
-# 🧮 Modern Simple Calculator -|- [Simple Calculator (Live Preview)](https://cyber752.github.io/Simple-Calculator/)
+# 🧮 Modern Simple Calculator | [Simple Calculator (Live Preview)](https://cyber752.github.io/Simple-Calculator/)
 
 A sleek, responsive, and high-performance calculator built with horizontal glassmorphism aesthetics and smooth micro-animations. Designed for both desktop and mobile use with full keyboard support.
 
